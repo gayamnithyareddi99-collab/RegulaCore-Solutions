@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RegulaCore Solutions</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+scroll-behavior:smooth;
+}
+
+/* COLORS */
+
+:root{
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--accent:#EC4899;
+--text:#0F172A;
+--bg:#F8FAFC;
+}
+
+/* HERO */
+
+.hero{
+padding:160px 8%;
+background:var(--bg);
+}
+
+.hero-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:44px;
+color:var(--text);
+margin-bottom:20px;
+}
+
+.hero p{
+color:#555;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--primary);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.hero img{
+width:100%;
+}
+
+/* PLATFORM */
+
+.platform{
+padding:120px 8%;
+background:white;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:50px;
+}
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.platform-card{
+background:#f9fafb;
+padding:25px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.platform-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* PROCESS */
+
+.process{
+padding:120px 8%;
+background:#f9fafb;
+}
+
+.process-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+text-align:center;
+}
+
+.process img{
+width:100%;
+height:150px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+/* PRICING */
+
+.pricing{
+padding:120px 8%;
+background:white;
+}
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.price-card{
+border:1px solid #eee;
+padding:35px;
+border-radius:10px;
+text-align:center;
+}
+
+.price-card h3{
+margin-bottom:10px;
+}
+
+.price-card ul{
+list-style:none;
+margin:20px 0;
+}
+
+.price-card li{
+margin:8px 0;
+color:#555;
+}
+
+/* FAQ */
+
+.faq{
+padding:120px 8%;
+background:black;
+color:white;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+border-bottom:1px solid #333;
+padding:18px 0;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+color:#ccc;
+margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 8%;
+background:white;
+}
+
+.contact-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#aaa;
+padding:20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:20px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-container,
+.platform-grid,
+.process-grid,
+.pricing-grid,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">RegulaCore Solutions</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">How It Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</div>
+
+</header>
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">RegulaCore Solutions</div>
+
+<nav id="navMenu">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#process">Process</a>
+<a href="#platform">Platform</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</header>
+
+
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+padding:11px 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+font-family:'Segoe UI',sans-serif;
+box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER */
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:rgb(255, 255, 255);
+}
+
+/* NAV LINKS */
+
+#navMenu{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+/* LINKS */
+
+#navMenu a{
+text-decoration:none;
+color:#FF0000;
+font-size:15px;
+font-weight:500;
+position:relative;
+}
+
+/* HOVER UNDERLINE */
+
+#navMenu a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:rgb(255, 255, 255);
+transition:0.3s;
+}
+
+#navMenu a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+width:25px;
+height:3px;
+background:#ff0000;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+#navMenu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+flex-direction:column;
+padding:25px 0;
+gap:20px;
+display:none;
+}
+
+#navMenu.active{
+display:flex;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+/* OPEN CLOSE MENU */
+
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+menu.classList.remove("active");
+
+});
+
+});
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<!-- HERO SECTION START -->
+
+<section class="hero-section" id="home">
+
+<div class="hero-container">
+
+<!-- LEFT -->
+
+<div class="hero-left">
+
+<h1>RegulaCore Solutions Compliance Governance Made Simple</h1>
+
+<div class="hero-divider"></div>
+
+<p class="hero-text">
+RegulaCore Solutions is a digital compliance and financial governance platform built for UK SMEs that automatically identifies statutory obligations, tracks execution with evidence, and provides real-time risk visibility helping businesses stay compliant, avoid penalties, and operate with confidence without requiring regulatory expertise.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#platform" class="btn-primary">Explore Platform</a>
+<a href="#contact" class="btn-secondary">Request Demo</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="hero-right">
+
+<img src="p.png" alt="RegulaCore Solutions Dashboard">
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* HERO */
+
+.hero-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+/* RED SHAPES */
+
+.hero-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:220px;
+height:220px;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.hero-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:240px;
+height:240px;
+background:#FF0000;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* HEADING */
+
+.hero-left h1{
+font-size:48px;
+color:#FF0000;
+line-height:1.2;
+}
+
+/* DIVIDER */
+
+.hero-divider{
+width:70px;
+height:3px;
+margin:15px 0 20px;
+background:#FF0000;
+}
+
+/* TEXT */
+
+.hero-text{
+color:#444;
+font-size:17px;
+line-height:1.8;
+margin-bottom:30px;
+max-width:520px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+    
+display:flex;
+gap:15px;
+}
+
+/* PRIMARY */
+
+.btn-primary{
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+color:white;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* SECONDARY */
+
+.btn-secondary{
+border:2px solid #FF0000;
+color:#FF0000;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* IMAGE */
+
+.hero-right img{
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:30px;
+}
+
+.hero-divider{
+margin:15px auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+}
+
+</style>
+
+<!-- HERO SECTION END -->
+<!-- ABOUT SECTION START -->
+
+<section class="about-section" id="about">  
+
+<div class="about-container">
+
+<!-- LEFT CONTENT -->
+
+<div class="about-left">
+
+<h2>About RegulaCore Solutions</h2>
+
+<div class="about-divider"></div>
+
+<p>
+RegulaCore Solutions is a digital compliance and financial governance platform 
+built specifically for small and medium-sized businesses in the United Kingdom.
+</p>
+
+<p>
+The platform addresses a major gap in the market where SMEs struggle to manage 
+statutory obligations such as VAT, payroll, pensions, and Companies House filings 
+without dedicated compliance teams.
+</p>
+
+<p>
+Instead of replacing accounting tools, RegulaCore acts as a governance layer 
+that tracks obligations, validates execution with evidence, and provides 
+real-time compliance risk visibility helping businesses stay compliant, 
+avoid penalties, and operate with confidence.
+</p>
+
+<div class="about-features">
+
+<div class="feature">Automated Obligation Tracking</div>
+<div class="feature">Evidence-Based Compliance</div>
+<div class="feature">Real-Time Risk Visibility</div>
+<div class="feature">SME-Focused Governance</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="about-right">
+
+<div class="founder-box">
+
+<h3 class="founder-title">Founder</h3>
+
+<div class="founder-divider"></div>
+
+<p>
+<strong>Sri Lakshmi Mandalapu</strong> founded RegulaCore Solutions with a vision 
+to simplify regulatory compliance for SMEs using structured digital systems.
+</p>
+
+<p>
+With strong experience in accounting, payroll, VAT, and statutory reporting in 
+the UK, she brings deep practical knowledge of compliance challenges faced by 
+small businesses.
+</p>
+
+<p>
+Her goal is to build a scalable platform that enables SMEs to operate with the 
+same governance standards as large enterprises without complexity or cost.
+</p>
+
+<a href="#" class="linkedin-btn">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.about-section{
+padding:140px 8%;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.about-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.about-left h2{
+font-size:42px;
+margin-bottom:10px;
+color:#ff0000; /* 🔴 RED */
+}
+/* 🔴 RED DIVIDER */
+
+.about-divider{
+width:80px;
+height:3px;
+margin:12px 0 25px;
+border-radius:3px;
+background:#ff0000;
+}
+
+/* TEXT */
+
+.about-left p{
+color:#e6ebff;
+line-height:1.8;
+margin-bottom:20px;
+font-size:16px;
+max-width:520px;
+}
+
+/* FEATURES */
+
+.about-features{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.feature{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.2);
+color:#ff0000;
+padding:10px 14px;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+}
+
+/* FOUNDER BOX */
+
+.founder-box{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+padding:35px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+
+.founder-title{
+margin-bottom:5px;
+color:#ff0000;
+}
+
+/* 🔴 RED DIVIDER */
+
+.founder-divider{
+width:60px;
+height:3px;
+margin-bottom:15px;
+background:#ff0000;
+}
+
+/* TEXT */
+
+.founder-box p{
+color:#e0e6ff;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+/* BUTTON */
+
+.linkedin-btn{
+display:inline-block;
+padding:10px 18px;
+background:#ff0000;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.about-section{
+padding:90px 6%;
+}
+
+.about-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+.about-left h2{
+font-size:32px;
+}
+
+.about-divider{
+margin:12px auto 20px;
+}
+
+.about-left p{
+margin:auto;
+font-size:15px;
+max-width:100%;
+}
+
+.about-features{
+grid-template-columns:1fr;
+max-width:320px;
+margin:auto;
+}
+
+.founder-divider{
+margin:12px auto 18px;
+}
+
+}
+
+</style>
+
+<!-- ABOUT SECTION END -->
+<!-- PROCESS SECTION START -->
+
+<section class="process-section" id="process">
+
+<div class="process-container">
+
+<h2 class="process-title">How RegulaCore Solutions Works</h2>
+
+<div class="process-divider"></div>
+
+<p class="process-sub">
+RegulaCore Solutions transforms regulatory compliance into a structured, automated governance system by combining obligation intelligence, evidence-based validation, and real-time risk monitoring for UK SMEs.
+</p>
+
+<div class="process-grid">
+
+<!-- STEP 1 -->
+<div class="process-card">
+
+<img src="p1.png" class="process-img">
+
+<div class="step">01</div>
+
+<h3>Obligation Identification Engine</h3>
+
+<p>
+The platform automatically analyses business data such as VAT status, employee count, payroll cycles, and turnover to generate all applicable statutory obligations. This removes the need for regulatory knowledge and ensures nothing is missed.
+</p>
+
+</div>
+
+
+<!-- STEP 2 -->
+<div class="process-card">
+
+<img src="p2.png" class="process-img">
+
+<div class="step">02</div>
+
+<h3>Task Assignment & Workflow Structuring</h3>
+
+<p>
+Each obligation is converted into structured tasks and assigned to responsible roles within the organisation. The system ensures accountability and maintains continuity even if team members change.
+</p>
+
+</div>
+
+
+<!-- STEP 3 -->
+<div class="process-card">
+
+<img src="p3.png" class="process-img">
+
+<div class="step">03</div>
+
+<h3>Evidence-Based Compliance Execution</h3>
+
+<p>
+Tasks cannot be marked complete without verified evidence such as HMRC confirmations, reports, or payment receipts. This ensures compliance is not assumed but proven and audit-ready at all times.
+</p>
+
+</div>
+
+
+<!-- STEP 4 -->
+<div class="process-card">
+
+<img src="p4.png" class="process-img">
+
+<div class="step">04</div>
+
+<h3>Real-Time Risk & Dependency Monitoring</h3>
+
+<p>
+The system continuously evaluates compliance status and detects cascading risks across obligations. If one task is delayed, it automatically identifies downstream impact, helping businesses act before penalties occur.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.process-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* 🔴 BRAND SHAPES (RED THEME) */
+
+.process-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#ff0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.process-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#ff0000; /* 🔴 RED */
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.process-container{
+max-width:1200px;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+/* TITLE */
+
+.process-title{
+font-size:40px;
+color:#ff0000; /* 🔴 RED */
+margin-bottom:10px;
+}
+
+/* DIVIDER */
+
+.process-divider{
+width:80px;
+height:3px;
+margin:10px auto 25px;
+border-radius:3px;
+background:#ff0000; /* 🔴 RED */
+}
+
+/* SUBTEXT */
+
+.process-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#444;
+line-height:1.7;
+}
+
+/* GRID */
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.process-card{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid #eee;
+border-top:4px solid #000080; /* 🔴 RED */
+text-align:left;
+transition:0.35s;
+}
+
+.process-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+.process-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* STEP */
+
+.step{
+display:inline-block;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+color:white;
+font-size:13px;
+font-weight:700;
+padding:6px 14px;
+border-radius:4px;
+margin-bottom:12px;
+}
+
+/* TITLE */
+
+.process-card h3{
+margin-bottom:10px;
+color:#111;
+font-size:18px;
+}
+
+/* TEXT */
+
+.process-card p{
+color:#555;
+font-size:14px;
+line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+.process-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.process-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+<!-- PROCESS SECTION END -->
+<!-- PLATFORM SECTION START -->
+
+<section class="platform-section" id="platform">
+
+<div class="platform-container">
+
+<h2 class="platform-title">RegulaCore Solutions Platform</h2>
+
+<div class="platform-divider"></div>
+
+<p class="platform-sub">
+RegulaCore Solutions is a digital compliance and financial governance platform designed 
+for UK SMEs. It introduces a structured compliance intelligence layer that automates 
+obligation management, validates execution with evidence, and provides real-time 
+risk visibility across business operations.
+</p>
+
+
+<div class="platform-grid">
+
+<!-- CARD 1 -->
+<div class="platform-card">
+
+<img src="p5.png" class="platform-img">
+
+<h3>Automated Obligation Engine</h3>
+
+<p class="short-text">
+No manual compliance tracking.
+</p>
+
+<p class="more-text">
+The platform automatically generates statutory obligations based on business data 
+such as VAT status, payroll cycles, turnover, and employee count. It continuously 
+updates obligations as business conditions change, removing the need for regulatory knowledge.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="platform-card">
+
+<img src="p6.png" class="platform-img">
+
+<h3>Evidence-Based Compliance System</h3>
+
+<p class="short-text">
+Compliance that is provable.
+</p>
+
+<p class="more-text">
+Tasks cannot be marked complete without validated evidence such as HMRC confirmations, 
+payment receipts, or official reports. This ensures every compliance action is verifiable 
+and audit-ready at all times.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="platform-card">
+
+<img src="p7.png" class="platform-img">
+
+<h3>Cascade Risk Intelligence</h3>
+
+<p class="short-text">
+Detect risks before penalties.
+</p>
+
+<p class="more-text">
+The platform models dependencies between obligations. A delay in one task 
+(e.g., payroll submission) automatically triggers risk signals in related areas 
+such as pensions, tax filings, and statutory reports.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="platform-card">
+
+<img src="p8.png" class="platform-img">
+
+<h3>Role-Based Responsibility System</h3>
+
+<p class="short-text">
+Clear ownership, no confusion.
+</p>
+
+<p class="more-text">
+Each obligation is assigned to specific roles within the business. 
+Responsibility persists even when staff change, ensuring continuity 
+and eliminating accountability gaps.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 5 -->
+<div class="platform-card">
+
+<img src="p9.png" class="platform-img">
+
+<h3>Real-Time Compliance Dashboard</h3>
+
+<p class="short-text">
+Full visibility at all times.
+</p>
+
+<p class="more-text">
+Provides a founder-level dashboard showing compliance status, risk exposure, 
+and audit readiness in real time, enabling faster and informed decision-making.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 6 -->
+<div class="platform-card">
+
+<img src="p10.png" class="platform-img">
+
+<h3>Jurisdiction-Ready Architecture</h3>
+
+<p class="short-text">
+Built to scale globally.
+</p>
+
+<p class="more-text">
+The platform separates regulatory logic from execution, allowing expansion 
+across regions (UK, EU, US) without rebuilding the system, making it 
+future-ready for global compliance.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* 🔥 YOUR EXACT GRADIENT */
+.platform-section{
+padding:120px 8%;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:#ff0000;
+}
+
+/* CONTAINER */
+.platform-container{
+max-width:1100px;
+margin:auto;
+}
+
+/* TITLE */
+.platform-title{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* DIVIDER */
+.platform-divider{
+width:80px;
+height:3px;
+margin:12px auto 25px;
+border-radius:3px;
+background:#ff0000;
+}
+
+/* SUB */
+.platform-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#d6dcff;
+}
+
+/* GRID */
+.platform-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* CARD */
+.platform-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+text-align:left;
+backdrop-filter:blur(10px);
+}
+
+.platform-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* IMAGE */
+.platform-img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* TITLE */
+.platform-card h3{
+margin-bottom:8px;
+color:white;
+}
+
+/* TEXT */
+.short-text{
+color:#cfd8ff;
+margin-bottom:10px;
+}
+
+.more-text{
+display:none;
+font-size:14px;
+color:#e6ebff;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+.learn-btn{
+background:#ff0000;
+color:white;
+border:none;
+padding:11px 20px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.platform-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+
+<script>
+
+document.querySelectorAll(".learn-btn").forEach(btn => {
+
+btn.addEventListener("click", function(){
+
+const card = this.parentElement;
+const more = card.querySelector(".more-text");
+
+if(more.style.display === "block"){
+more.style.display = "none";
+this.innerText = "Learn More";
+}else{
+more.style.display = "block";
+this.innerText = "Show Less";
+}
+
+});
+
+});
+
+</script>
+
+<!-- PLATFORM SECTION END -->
+<!-- PRICING SECTION START -->
+
+<section class="pricing-section" id="pricing">
+
+<div class="pricing-container">
+
+<h2 class="pricing-title">RegulaCore Solutions Pricing</h2>
+
+<div class="title-divider"></div>
+
+<p class="pricing-sub">
+Flexible pricing built for UK SMEs. RegulaCore Solutions replaces manual compliance tracking 
+and expensive consultants with a structured, scalable governance platform.
+</p>
+
+<div class="pricing-grid">
+
+<!-- STARTER -->
+
+<div class="pricing-card">
+
+<h3>Starter</h3>
+
+<p class="price">£19 / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Basic Obligation Tracking</li>
+<li><span class="tick">✓</span> Compliance Calendar & Alerts</li>
+<li><span class="tick">✓</span> Task Assignment</li>
+<li><span class="tick">✓</span> Small Team Usage</li>
+<li><span class="tick">✓</span> Email Support</li>
+</ul>
+
+<button onclick="selectPlan('Starter')">Get Started</button>
+
+</div>
+
+
+<!-- PROFESSIONAL -->
+
+<div class="pricing-card pro-card">
+
+<div class="pro-badge">Most Popular</div>
+
+<h3>Professional</h3>
+
+<p class="price">£49 / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Automated Obligation Generation</li>
+<li><span class="tick">✓</span> Evidence-Based Compliance Tracking</li>
+<li><span class="tick">✓</span> Risk Visibility Dashboard</li>
+<li><span class="tick">✓</span> Compliance Workflow Management</li>
+<li><span class="tick">✓</span> Audit-Ready Records</li>
+</ul>
+
+<button onclick="selectPlan('Professional')">Choose Plan</button>
+
+</div>
+
+
+<!-- ENTERPRISE -->
+
+<div class="pricing-card">
+
+<h3>Enterprise</h3>
+
+<p class="price">£99+ / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Full Compliance Governance Platform</li>
+<li><span class="tick">✓</span> Multi-Team & Multi-Entity Support</li>
+<li><span class="tick">✓</span> Integration (Xero, QuickBooks, Payroll)</li>
+<li><span class="tick">✓</span> Advanced Risk Scoring Engine</li>
+<li><span class="tick">✓</span> Dedicated Support & Onboarding</li>
+</ul>
+
+<button onclick="selectPlan('Enterprise')">Contact Sales</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.pricing-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* SHAPES (KEEP YOUR STYLE BUT MATCH BRAND) */
+
+.pricing-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#FF0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.pricing-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#FF0000;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* TITLE */
+
+.pricing-title{
+font-size:40px;
+color:#FF0000; /* 🔴 RED */
+}
+
+/* 🔴 DIVIDER */
+
+.title-divider{
+width:80px;
+height:3px;
+margin:12px auto 25px;
+background:#FF0000;
+}
+
+/* SUB */
+
+.pricing-sub{
+color:#444;
+margin-bottom:60px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* GRID */
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+position:relative;
+z-index:2;
+}
+
+/* CARD */
+
+.pricing-card{
+background:white;
+padding:40px 30px;
+border-radius:12px;
+border:1px solid #eee;
+transition:0.3s;
+position:relative;
+}
+
+.pricing-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* POPULAR */
+
+.pro-card{
+border:2px solid #FF0000;
+transform:scale(1.05);
+}
+
+.pro-badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+color:white;
+font-size:12px;
+padding:6px 18px;
+border-radius:20px;
+}
+
+/* PRICE */
+
+.price{
+margin:15px 0;
+font-size:24px;
+font-weight:700;
+color:#151B54;
+}
+
+/* 🔴 CARD DIVIDER */
+
+.card-divider{
+height:3px;
+width:50px;
+margin:15px auto 20px;
+background:#FF0000;
+}
+
+/* LIST */
+
+.pricing-card ul{
+list-style:none;
+padding:0;
+margin-bottom:25px;
+text-align:left;
+}
+
+.pricing-card li{
+margin:10px 0;
+color:#444;
+font-size:14px;
+}
+
+/* TICK */
+
+.tick{
+color:#FF0000;
+font-weight:bold;
+margin-right:8px;
+}
+
+/* BUTTON */
+
+.pricing-card button{
+padding:12px 24px;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.pricing-card button:hover{
+transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.pricing-grid{
+grid-template-columns:1fr;
+}
+
+.pro-card{
+transform:none;
+}
+
+}
+
+</style>
+
+
+<script>
+
+function selectPlan(plan){
+alert("Selected plan: " + plan);
+document.getElementById("contact").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+</script>
+
+<!-- PRICING SECTION END -->
+
+<!-- FAQ SECTION START -->
+
+<section class="faq-section" id="faq">
+
+<div class="faq-container">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-divider"></div>
+
+<p class="faq-sub">
+Understand how RegulaCore Solutions simplifies compliance management, 
+financial governance, and regulatory readiness for modern UK SMEs.
+</p>
+
+<div class="faq-list">
+
+<!-- FAQ 1 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What is RegulaCore Solutions?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+RegulaCore Solutions is a digital compliance and financial governance platform 
+that helps SMEs manage regulatory obligations, track evidence, and maintain 
+continuous audit readiness without manual complexity.
+</p>
+</div>
+</div>
+
+<!-- FAQ 2 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How is RegulaCore different from traditional compliance tools?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Unlike traditional tools that rely on spreadsheets and manual tracking, 
+RegulaCore provides structured workflows, real-time visibility, and 
+automated compliance tracking—reducing human error and operational risk.
+</p>
+</div>
+</div>
+
+<!-- FAQ 3 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does the platform help with audits?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+The platform continuously captures compliance evidence and organises it 
+in a structured format, allowing businesses to generate audit-ready reports 
+instantly without last-minute preparation.
+</p>
+</div>
+</div>
+
+<!-- FAQ 4 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Who is the platform designed for?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+RegulaCore is designed for SMEs, finance teams, and operations leaders 
+who need a simple and reliable way to manage compliance without requiring 
+dedicated regulatory specialists.
+</p>
+</div>
+</div>
+
+<!-- FAQ 5 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What type of compliance does it support?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+The platform supports financial governance, internal controls, and 
+regulatory compliance frameworks relevant to UK SMEs, ensuring businesses 
+remain aligned with evolving requirements.
+</p>
+</div>
+</div>
+
+<!-- FAQ 6 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does RegulaCore improve business performance?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+By reducing compliance risk, eliminating manual tracking, and improving 
+visibility, RegulaCore helps businesses save time, lower costs, and operate 
+with greater confidence and control.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* 🔥 YOUR EXACT BACKGROUND */
+.faq-section{
+padding:120px 8%;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+/* TITLE */
+.faq-title{
+text-align:center;
+color:#FF0000; /* 🔴 RED */
+font-size:36px;
+margin-bottom:10px;
+}
+
+/* SUB TEXT */
+.faq-sub{
+text-align:center;
+color:#d6dcff;
+margin-bottom:45px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+}
+
+/* 🔴 DIVIDER */
+.faq-divider{
+width:80px;
+height:3px;
+margin:15px auto 30px;
+background:#FF0000;
+border-radius:3px;
+}
+
+/* LIST */
+.faq-list{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+/* CARD */
+.faq-item{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:12px;
+padding:18px 22px;
+backdrop-filter:blur(8px);
+transition:0.3s;
+}
+
+/* HOVER */
+.faq-item:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* QUESTION */
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+color:white;
+font-size:16px;
+font-weight:600;
+}
+
+/* 🔴 BUTTON */
+.toggle{
+background:#FF0000;
+border:none;
+color:white;
+font-size:18px;
+width:34px;
+height:34px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* ANSWER */
+.faq-answer{
+display:none;
+margin-top:14px;
+}
+
+.faq-answer p{
+color:#e0e6ff;
+line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.faq-title{
+font-size:28px;
+}
+
+.faq-section{
+padding:90px 6%;
+}
+
+}
+
+</style>
+
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(q=>{
+
+q.addEventListener("click",()=>{
+
+const answer = q.nextElementSibling;
+const btn = q.querySelector(".toggle");
+
+if(answer.style.display === "block"){
+answer.style.display = "none";
+btn.innerHTML = "+";
+}else{
+
+document.querySelectorAll(".faq-answer").forEach(a=>a.style.display="none");
+document.querySelectorAll(".toggle").forEach(b=>b.innerHTML="+");
+
+answer.style.display = "block";
+btn.innerHTML = "−";
+}
+
+});
+
+});
+
+</script>
+
+<!-- FAQ SECTION END -->
+ <!-- CONTACT SECTION START -->
+
+<section class="contact-section" id="contact">
+
+<div class="contact-container">
+
+<!-- LEFT -->
+
+<div class="contact-left">
+
+<h2>Contact RegulaCore Solutions</h2>
+<div class="contact-divider"></div>
+
+<p class="contact-text">
+RegulaCore Solutions is a digital compliance and financial governance platform 
+built for UK SMEs.
+Get in touch to explore how your business can manage compliance with clarity, 
+control, and confidence.
+</p>
+
+<!-- INFO BOX -->
+
+<div class="info-box">
+
+<div class="contact-item">
+<h3>Email</h3>
+<p>regulacoresolutionsuk@outlook.com</p>
+</div>
+
+
+
+<div class="contact-item">
+<h3>Phone</h3>
+<p>+44 7442581207</p>
+</div>
+<div class="contact-item">
+<h3>Location</h3>
+<p>Northampton, United Kingdom</p>
+</div> 
+</div>
+
+</div>
+
+
+<!-- FORM -->
+
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+<input type="hidden" name="access_key" value="945b03b6-e866-43e6-9507-68e3ff73ae53">
+<input type="hidden" name="subject" value="New Contact - RegulaCore Solutions">
+<input type="hidden" name="from_name" value="RegulaCore Website">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+<p class="note">We will respond within 24 hours.</p>
+
+<p id="form-status"></p>
+
+</form>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.contact-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+/* 🔴 RED BRAND SHAPES (PDF STYLE) */
+
+.contact-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:220px;
+height:220px;
+background:#FF0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.contact-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#FF0000;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* LEFT */
+
+.contact-left h2{
+font-size:40px;
+color:#FF0000; /* 🔴 RED HEADING */
+}
+
+/* DIVIDER */
+
+.contact-divider{
+width:60px;
+height:3px;
+margin:12px 0 20px;
+background:#FF0000; /* 🔴 RED */
+}
+
+/* TEXT */
+
+.contact-text{
+color:#444;
+line-height:1.8;
+margin-bottom:35px;
+max-width:480px;
+}
+
+/* INFO BOX */
+
+.info-box{
+background:#f8f8f8;
+border-left:4px solid #FF0000;
+padding:25px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+/* ITEMS */
+
+.contact-item h3{
+font-size:14px;
+color:#FF0000;
+}
+
+.contact-item p{
+font-size:14px;
+color:#222;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+/* INPUT */
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+}
+
+/* FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:#FF0000;
+box-shadow:0 0 0 2px rgba(255,0,0,0.15);
+}
+
+/* BUTTON */
+
+.contact-form button{
+margin-top:10px;
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+color:white;
+border:none;
+padding:14px;
+font-weight:600;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+transform:translateY(-2px);
+background:#cc0000;
+}
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#FF0000;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-section{
+padding:80px 6%;
+text-align:center;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.contact-divider{
+margin:15px auto 25px;
+}
+
+.contact-text{
+margin:auto;
+}
+
+.info-box{
+margin:auto;
+max-width:320px;
+text-align:left;
+}
+
+.contact-form{
+padding:30px;
+}
+
+}
+
+</style>
+
+
+<script>
+
+const form = document.querySelector(".contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async function(e) {
+e.preventDefault();
+
+const data = new FormData(form);
+
+const response = await fetch(form.action, {
+method: "POST",
+body: data
+});
+
+if (response.ok) {
+status.innerHTML = "✅ Message sent successfully!";
+status.style.color = "green";
+form.reset();
+} else {
+status.innerHTML = "❌ Something went wrong. Try again.";
+status.style.color = "red";
+}
+
+});
+
+</script>
+
+<!-- CONTACT SECTION END -->
+<!-- FOOTER START -->
+
+<style>
+
+/* 🔵 YOUR BLUE COLOR SYSTEM */
+:root{
+--bg1:#151B54;
+--bg2:#191970;
+--bg3:#000080;
+--bg4:#151B8D;
+--bg5:#00008B;
+--bg6:#15317E;
+--bg7:#0000A0;
+--bg8:#0000A5;
+--bg9:#0020C2;
+--bg10:#0000CD;
+
+--text-main:#ffffff;
+--text-soft:#cfd8ff;
+
+/* 🔴 BRAND RED */
+--accent:#FF0000;
+}
+
+/* 🔥 FOOTER BACKGROUND */
+.footer{
+position:relative;
+overflow:hidden;
+
+background:linear-gradient(135deg,
+#151B54 0%,
+#191970 20%,
+#000080 40%,
+#151B8D 60%,
+#00008B 80%,
+#0000A5 100%
+);
+
+color:var(--text-main);
+padding:100px 8% 40px;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* LIGHT SHAPES */
+.footer::before{
+content:"";
+position:absolute;
+top:-80px;
+right:-80px;
+width:280px;
+height:280px;
+background:rgba(255,255,255,0.05);
+border-radius:30px;
+transform:rotate(45deg);
+}
+
+.footer::after{
+content:"";
+position:absolute;
+bottom:-80px;
+left:-80px;
+width:240px;
+height:240px;
+background:rgba(255,255,255,0.04);
+border-radius:30px;
+transform:rotate(45deg);
+}
+
+/* CONTAINER */
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:70px;
+position:relative;
+z-index:2;
+}
+
+/* HEADING */
+.footer h3,
+.footer h4{
+color:#FF0000;
+}
+
+/* 🔴 DIVIDER */
+.footer-divider{
+width:60px;
+height:3px;
+margin:12px 0 20px;
+border-radius:3px;
+background:#FF0000;
+}
+
+/* TEXT */
+.footer-left p{
+font-size:14px;
+line-height:1.8;
+color:var(--text-soft);
+max-width:420px;
+}
+
+/* LINKS */
+.footer-links a{
+display:block;
+text-decoration:none;
+color:var(--text-soft);
+margin-bottom:10px;
+font-size:14px;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:white;
+transform:translateX(6px);
+}
+
+/* BOTTOM */
+.footer-bottom{
+max-width:1100px;
+margin:60px auto 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:20px;
+font-size:13px;
+color:#ccc;
+}
+
+/* BUTTON */
+.top-btn{
+background:#FF0000;
+color:white;
+border:none;
+width:44px;
+height:44px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+transition:0.3s;
+}
+
+.top-btn:hover{
+transform:translateY(-5px) scale(1.08);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.footer{
+padding:80px 6% 30px;
+text-align:center;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+gap:50px;
+justify-items:center;
+}
+
+.footer-left,
+.footer-links{
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.footer-divider{
+margin:14px auto 22px;
+}
+
+.footer-bottom{
+flex-direction:column;
+gap:14px;
+}
+
+}
+.footer-divider{
+width:60px;
+height:3px;
+margin:12px auto 20px;  /* ✅ CENTER */
+border-radius:3px;
+background:#FF0000;
+}
+</style>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+<div class="footer-left">
+
+<h3>RegulaCore Solutions</h3>
+<div class="footer-divider"></div>
+
+<p>
+RegulaCore Solutions is a digital compliance and financial governance platform 
+designed for UK SMEs.
+
+It provides structured obligation tracking, real-time risk visibility, and 
+evidence-based compliance management—helping businesses stay audit-ready 
+without complexity.
+</p>
+
+</div>
+
+<!-- CENTER -->
+<div class="footer-links">
+
+<h4>Platform</h4>
+<div class="footer-divider"></div>
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+
+</div>
+
+<!-- RIGHT -->
+<div class="footer-links">
+
+<h4>Company</h4>
+<div class="footer-divider"></div>
+
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+<div class="footer-bottom">
+
+<p>© 2026 RegulaCore Solutions. All rights reserved.</p>
+
+<button class="top-btn" onclick="scrollToTop()">↑</button>
+
+</div>
+
+</footer>
+
+<script>
+function scrollToTop(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+</script>
+
+<!-- FOOTER END -->
+
+</body>
+</html>
